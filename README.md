@@ -8,8 +8,8 @@ This config has installation script which will work in **Arch & Arch based, Ubun
 
 ## Screenshots
 <div>
-  <img align="center" width=49% src="https://raw.githubusercontent.com/shell-ninja/i3-dotfiles/refs/heads/initial/previews/1.png">
-  <img align="center" width=49% src="https://raw.githubusercontent.com/shell-ninja/i3-dotfiles/refs/heads/initial/previews/2.png">
+  <img align="center" width=49% src="https://raw.githubusercontent.com/GhoutiYellesCH/i3-dotfiles/refs/heads/main/previews/1.png">
+  <img align="center" width=49% src="https://raw.githubusercontent.com/GhoutiYellesCH/i3-dotfiles/refs/heads/main/previews/2.png">
 </div>
 
 ## Installation
@@ -17,7 +17,7 @@ This config has installation script which will work in **Arch & Arch based, Ubun
 - Clone the repository and run these commands
 
 ```bash
-git clone --depth=1 https://github.com/shell-ninja/i3-dotfiles
+git clone --depth=1 https://github.com/GhoutiYellesCH/i3-dotfiles
 
 chmod +x install.sh
 

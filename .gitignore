@@ -4,6 +4,17 @@
 Logs/
 *.log
 
+# Untracked extra wallpapers (preventing 350MB HTTPS timeouts)
+config/i3/Wallpapers/*
+!config/i3/Wallpapers/README.md
+!config/i3/Wallpapers/alena-aenami-escape.jpg
+!config/i3/Wallpapers/cyberpunk-soldier-sci-fi.jpg
+!config/i3/Wallpapers/deer_and_sunset.jpg
+!config/i3/Wallpapers/deer_in_pine_forest.jpg
+!config/i3/Wallpapers/ds4_purple.png
+!config/i3/Wallpapers/fantasy-dragon.jpg
+!config/i3/Wallpapers/hut.jpg
+
 # OS / Editor files
 .DS_Store
 Thumbs.db
