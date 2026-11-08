@@ -5,9 +5,16 @@ if [ -d "$HOME/.cache/wal" ]; then
 fi
 
 wall="$HOME/.config/i3/.cache/current.png"
+mode_file="$HOME/.config/i3/.mode"
+mode="dark"
+[ -f "$mode_file" ] && mode=$(cat "$mode_file")
 
 if [[ -f "$wall" ]]; then
-    wal -i "$wall"
+    if [ "$mode" = "light" ]; then
+        wal -i "$wall" -l
+    else
+        wal -i "$wall"
+    fi
 fi
 
 # Extract colors from colors.json
@@ -73,6 +80,11 @@ update_polybar_colors() {
     sed -i "s/^indigo1 = .*/indigo1 = $clr5/g" "$polybar_config"
     sed -i "s/^teal = .*/teal = $clr14/g" "$polybar_config"
     sed -i "s/^bluedark = .*/bluedark = $clr4/g" "$polybar_config"
+    if [ "$mode" = "light" ]; then
+        sed -i "s/^bg1 = .*/bg1 = #e5e5e8/g" "$polybar_config"
+    else
+        sed -i "s/^bg1 = .*/bg1 = #383d49/g" "$polybar_config"
+    fi
 }
 
 update_polybar_colors
@@ -129,8 +141,16 @@ sed -i "s/^color14 .*/color14 $bright_cyan/g" "$kitty_config"
 sed -i "s/^color15 .*/color15 $bright_white/g" "$kitty_config"
 
 
- # setting rofi theme
- ln -sf ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/themes/rofi-pywal.rasi
+ # setting rofi and gtk theme mode
+ if [ "$mode" = "light" ]; then
+     ln -sf ~/.cache/wal/colors-rofi-light.rasi ~/.config/rofi/themes/rofi-pywal.rasi
+     gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' 2>/dev/null
+     gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-sage' 2>/dev/null
+ else
+     ln -sf ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/themes/rofi-pywal.rasi
+     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null
+     gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-sage-dark' 2>/dev/null
+ fi
 
  # ----- Dunst
  dunst_file="$HOME/.config/dunst/dunstrc"
