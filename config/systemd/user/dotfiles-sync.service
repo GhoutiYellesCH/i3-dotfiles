@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly Dotfiles Auto-Sync to GitHub
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment="DISPLAY=:0"
+ExecStart=/home/gotoro/.config/i3/scripts/auto_update_dotfiles.sh
+
+[Install]
+WantedBy=default.target

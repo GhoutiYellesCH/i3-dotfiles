@@ -25,6 +25,7 @@ rsync -a "$HOME/.config/rofi/" "$REPO_DIR/config/rofi/" 2>> "$LOG_FILE"
 rsync -a "$HOME/.config/dunst/" "$REPO_DIR/config/dunst/" 2>> "$LOG_FILE"
 rsync -a "$HOME/.config/kitty/" "$REPO_DIR/config/kitty/" 2>> "$LOG_FILE"
 rsync -a "$HOME/.config/fastfetch/" "$REPO_DIR/config/fastfetch/" 2>> "$LOG_FILE"
+rsync -a "$HOME/.config/systemd/" "$REPO_DIR/config/systemd/" 2>> "$LOG_FILE"
 [ -f "$HOME/.config/greenclip.toml" ] && cp -a "$HOME/.config/greenclip.toml" "$REPO_DIR/config/"
 
 # 2. Check for changes in git repo
