@@ -1,0 +1,11 @@
+# Cache directories and runtime caches
+.cache/
+**/.cache/
+Logs/
+*.log
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~

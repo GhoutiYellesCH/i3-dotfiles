@@ -1,0 +1,82 @@
+configuration {
+    font:                        "JetBrainsMono Nerd Font 10";
+    show-icons:                  false;
+    hover-select:                true;
+    me-select-entry:             "MouseSecondary";
+    me-accept-entry:             "MousePrimary";
+}
+
+@import "~/.config/rofi/themes/rofi-pywal.rasi"
+
+window {
+    width:                       480px;
+    location:                    northwest;
+    anchor:                      northwest;
+    x-offset:                    15px;
+    y-offset:                    35px;
+    border:                      2px solid;
+    border-radius:               6px;
+    border-color:                @selected-active-background;
+    background-color:            @background;
+    padding:                     10px;
+}
+
+mainbox {
+    spacing:                     10px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:                     8px;
+    padding:                     8px 12px;
+    background-color:            @alternate-normal-background;
+    border-radius:               6px;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:                  @selected-active-background;
+    font:                        "JetBrainsMono Nerd Font Bold 10";
+}
+
+entry {
+    placeholder:                 "Search / select...";
+    placeholder-color:           @alternate-active-foreground;
+    text-color:                  @foreground;
+    cursor:                      text;
+}
+
+listview {
+    lines:                       10;
+    columns:                     1;
+    spacing:                     4px;
+    scrollbar:                   false;
+    background-color:            transparent;
+    fixed-height:                false;
+}
+
+element {
+    padding:                     8px 12px;
+    border-radius:               4px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @background;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+}
